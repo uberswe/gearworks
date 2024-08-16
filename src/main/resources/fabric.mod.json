@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "gearworks",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Gearworks",
+  "description": "This mod adds additional features for the Gearworks SMP.",
   "authors": [
-    "Me!"
+    "uberswe"
   ],
   "contact": {
     "sources": "https://github.com/Fabricators-of-Create/create-fabric-addon-template"
   },
   "license": "CC0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/gearworks/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.example.modid.ExampleMod"
+      "com.gearworkssmp.gearworks.Gearworks"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "gearworks.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",

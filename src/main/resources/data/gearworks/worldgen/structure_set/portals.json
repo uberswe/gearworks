@@ -1,0 +1,13 @@
+{
+	"placement": {
+		"type": "minecraft:random_spread",
+		"salt": 11044210,
+		"spacing": 60,
+		"separation": 15,
+		"spread_type": "triangular"
+	},
+	"structures": [{
+		"structure": "uberswesstructures:portals",
+		"weight": 1
+	}]
+}

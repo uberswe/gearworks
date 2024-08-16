@@ -1,0 +1,13 @@
+{
+	"placement": {
+		"type": "minecraft:random_spread",
+		"salt": 27545630,
+		"spacing": 60,
+		"separation": 12,
+		"spread_type": "triangular"
+	},
+	"structures": [{
+		"structure": "uberswesstructures:mushrooms",
+		"weight": 1
+	}]
+}

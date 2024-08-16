@@ -1,0 +1,13 @@
+{
+    "name":"uberswesstructures:portals",
+    "fallback":"minecraft:empty",
+    "elements":[{
+        "weight":1,
+        "element":{
+            "location":"uberswesstructures:portals/idavidfh_giant_portal",
+            "processors":"minecraft:empty",
+            "projection":"rigid",
+            "element_type":"minecraft:single_pool_element"
+        }
+    }]
+}

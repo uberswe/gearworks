@@ -1,0 +1,29 @@
+{
+    "name":"uberswesstructures:trains",
+    "fallback":"minecraft:empty",
+    "elements":[{
+        "weight":1,
+        "element":{
+            "location":"uberswesstructures:trains/herobrine_train_station",
+            "processors":"minecraft:empty",
+            "projection":"rigid",
+            "element_type":"minecraft:single_pool_element"
+        }
+    },{
+        "weight":1,
+        "element":{
+            "location":"uberswesstructures:trains/ninjakade_abandoned_train",
+            "processors":"minecraft:empty",
+            "projection":"rigid",
+            "element_type":"minecraft:single_pool_element"
+        }
+    },{
+        "weight":1,
+        "element":{
+            "location":"uberswesstructures:trains/seaniemac99_abandoned_train_station",
+            "processors":"minecraft:empty",
+            "projection":"rigid",
+            "element_type":"minecraft:single_pool_element"
+        }
+    }]
+}

@@ -1,0 +1,13 @@
+{
+	"placement": {
+		"type": "minecraft:random_spread",
+		"salt": 927478382,
+		"spacing": 60,
+		"separation": 22,
+		"spread_type": "triangular"
+	},
+	"structures": [{
+		"structure": "uberswesstructures:towers",
+		"weight": 1
+	}]
+}
