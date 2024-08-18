@@ -7,7 +7,7 @@
     "adapt_noise": false,
     "spawn_overrides": {},
     "type": "minecraft:jigsaw",
-    "start_pool": "uberswesstructures:mushrooms",
+    "start_pool": "gearworks:mushrooms",
     "size": 7,
     "step": "surface_structures",
     "start_height": {

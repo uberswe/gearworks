@@ -1,10 +1,10 @@
 {
-    "name":"uberswesstructures:towers",
+    "name":"gearworks:towers",
     "fallback":"minecraft:empty",
     "elements":[{
         "weight":1,
         "element":{
-            "location":"uberswesstructures:towers/kieranstinkyfeet_large_tower",
+            "location":"gearworks:towers/kieranstinkyfeet_large_tower",
             "processors":"minecraft:empty",
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"

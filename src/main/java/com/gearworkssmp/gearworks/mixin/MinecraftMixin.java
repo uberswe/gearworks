@@ -1,7 +1,5 @@
 package com.gearworkssmp.gearworks.mixin;
 
-import com.gearworkssmp.gearworks.Gearworks;
-
 
 
 import net.minecraft.server.MinecraftServer;

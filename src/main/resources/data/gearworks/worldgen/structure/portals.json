@@ -5,7 +5,7 @@
     "adapt_noise": false,
     "spawn_overrides": {},
     "type": "minecraft:jigsaw",
-    "start_pool": "uberswesstructures:portals",
+    "start_pool": "gearworks:portals",
     "size": 7,
     "step": "surface_structures",
     "start_height": {

@@ -1,10 +1,10 @@
 {
-    "name":"uberswesstructures:mushrooms",
+    "name":"gearworks:mushrooms",
     "fallback":"minecraft:empty",
     "elements":[{
         "weight":1,
         "element":{
-            "location":"uberswesstructures:mushrooms/prancingpachy_mushroom",
+            "location":"gearworks:mushrooms/prancingpachy_mushroom",
             "processors":"minecraft:empty",
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"

@@ -11,6 +11,10 @@
         {
           "type": "minecraft:item",
           "name": "create:goggles"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:schedule"
         }
       ]
     },
@@ -81,7 +85,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "create:white_sail"
+          "name": "create:track"
         }
       ]
     }

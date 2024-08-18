@@ -1,10 +1,10 @@
 {
-    "name":"uberswesstructures:houses",
+    "name":"gearworks:houses",
     "fallback":"minecraft:empty",
     "elements":[{
         "weight":1,
         "element":{
-            "location":"uberswesstructures:houses/chelcooo_mushroom_secret_home",
+            "location":"gearworks:houses/chelcooo_mushroom_secret_home",
             "processors":"minecraft:empty",
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"
@@ -12,7 +12,7 @@
     },{
         "weight":1,
         "element":{
-            "location":"uberswesstructures:houses/decka_starter_house",
+            "location":"gearworks:houses/decka_starter_house",
             "processors":"minecraft:empty",
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"
@@ -20,7 +20,7 @@
     },{
         "weight":1,
         "element":{
-            "location":"uberswesstructures:houses/gargafield_small_house",
+            "location":"gearworks:houses/gargafield_small_house",
             "processors":"minecraft:empty",
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"
@@ -28,7 +28,7 @@
     },{
         "weight":1,
         "element":{
-            "location":"uberswesstructures:houses/platypus_tree_house",
+            "location":"gearworks:houses/platypus_tree_house",
             "processors":"minecraft:empty",
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"
@@ -36,7 +36,7 @@
     },{
         "weight":1,
         "element":{
-            "location":"uberswesstructures:houses/rascallyrabbit_house",
+            "location":"gearworks:houses/rascallyrabbit_house",
             "processors":"minecraft:empty",
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"
@@ -44,7 +44,7 @@
     },{
         "weight":1,
         "element":{
-            "location":"uberswesstructures:houses/vipersoup_house",
+            "location":"gearworks:houses/vipersoup_house",
             "processors":"minecraft:empty",
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"
@@ -52,7 +52,7 @@
     },{
         "weight":1,
         "element":{
-            "location":"uberswesstructures:houses/zalkie_barn_house",
+            "location":"gearworks:houses/zalkie_barn_house",
             "processors":"minecraft:empty",
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"

@@ -7,7 +7,7 @@
 		"spread_type": "triangular"
 	},
 	"structures": [{
-		"structure": "uberswesstructures:windmills",
+		"structure": "gearworks:windmills",
 		"weight": 1
 	}]
 }

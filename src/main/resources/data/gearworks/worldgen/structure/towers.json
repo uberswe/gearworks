@@ -18,7 +18,7 @@
     "adapt_noise": false,
     "spawn_overrides": {},
     "type": "minecraft:jigsaw",
-    "start_pool": "uberswesstructures:towers",
+    "start_pool": "gearworks:towers",
     "size": 7,
     "step": "surface_structures",
     "start_height": {

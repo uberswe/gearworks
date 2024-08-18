@@ -7,7 +7,7 @@
 		"spread_type": "triangular"
 	},
 	"structures": [{
-		"structure": "uberswesstructures:portals",
+		"structure": "gearworks:portals",
 		"weight": 1
 	}]
 }

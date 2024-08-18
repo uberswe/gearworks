@@ -1,10 +1,10 @@
 {
-    "name":"uberswesstructures:windmills",
+    "name":"gearworks:windmills",
     "fallback":"minecraft:empty",
     "elements":[{
         "weight":1,
         "element":{
-            "location":"uberswesstructures:windmills/guybrush_windmill",
+            "location":"gearworks:windmills/guybrush_windmill",
             "processors":"minecraft:empty",
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"
