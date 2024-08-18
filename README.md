@@ -1,4 +1,6 @@
-# Gearworks Mod
+# Gearworks Additions
+
+You can find this mod on [Curseforge](https://www.curseforge.com/minecraft/mc-mods/gearworks-additions)
 
 This fabric mod adds additional features and content to the Gearworks SMP server but can be used as a standalone mod.
 Required Dependencies:
