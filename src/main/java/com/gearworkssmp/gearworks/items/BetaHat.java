@@ -41,7 +41,7 @@ public class BetaHat extends TrinketItem implements TrinketRenderer {
 			ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
 			TrinketRenderer.followBodyRotations(entity, (BipedEntityModel<LivingEntity>) contextModel);
 			TrinketRenderer.translateToFace(matrices, (PlayerEntityModel<AbstractClientPlayerEntity>) contextModel, player, headYaw, headPitch);
-			matrices.scale(-0.6f,-0.6f,0.6f);
+			matrices.scale(-0.7f,-0.7f,0.7f);
 			matrices.translate(0f,0,0.5f);
 			itemRenderer.renderItem(entity, stack, ModelTransformationMode.HEAD, false, matrices, vertexConsumers, entity.getWorld(), light, OverlayTexture.DEFAULT_UV, 0);
 		}
