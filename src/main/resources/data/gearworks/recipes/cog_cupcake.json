@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "create:cogwheel"
+    },
+    {
+      "amount": 27000,
+      "fluid": "create:chocolate"
+    }
+  ],
+  "results": [
+    {
+      "item": "gearworks:cog_cupcake"
+    }
+  ]
+}
