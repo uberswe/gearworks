@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "gearworks:beta_hat"
+    "gearworks:beta_hat",
+    "gearworks:no_beta_hat"
   ]
 }

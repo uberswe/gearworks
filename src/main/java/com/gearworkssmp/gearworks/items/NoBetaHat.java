@@ -23,8 +23,8 @@ import net.minecraft.item.ItemStack;
 
 import java.util.UUID;
 
-public class BetaHat extends TrinketItem implements TrinketRenderer {
-	public BetaHat(Settings settings) {
+public class NoBetaHat extends TrinketItem implements TrinketRenderer {
+	public NoBetaHat(Settings settings) {
 		super(settings);
 	}
 

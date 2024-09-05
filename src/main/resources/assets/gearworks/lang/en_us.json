@@ -1,5 +1,10 @@
 {
   "item.gearworks.beta_hat": "Gearworks Beta Hat",
-  "item.gearworks.cog_cupcake": "Cog Cupcake",
-  "item.gearworks.cog_cupcake.tooltip": "Legend says Uberswe eats Cogs for good luck"
+  "item.gearworks.no_beta_hat": "Gearworks Hat",
+  "item.gearworks.cog_cupcake": "Cogcake",
+  "item.gearworks.cog_cupcake_step1": "Incomplete Cogcake",
+  "item.gearworks.cog_cupcake_step2": "Incomplete Cogcake",
+  "item.gearworks.cog_cupcake_step3": "Incomplete Cogcake",
+  "item.gearworks.cog_cupcake.tooltip": "Legend says Uberswe eats Cogs for good luck",
+  "item.gearworks.incomplete_cog_cupcake.tooltip": "An incomplete Cogcake"
 }

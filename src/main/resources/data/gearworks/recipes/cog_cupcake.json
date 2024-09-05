@@ -1,21 +1,77 @@
 {
-  "type": "create:mixing",
-  "heatRequirement": "heated",
-  "ingredients": [
-    {
-      "item": "minecraft:bread"
-    },
-    {
-      "item": "create:cogwheel"
-    },
-    {
-      "amount": 27000,
-      "fluid": "create:chocolate"
-    }
-  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:bread"
+  },
+  "loops": 1,
   "results": [
     {
+      "chance": 100.0,
       "item": "gearworks:cog_cupcake"
     }
-  ]
+  ],
+  "sequence": [
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "minecraft:bread"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:cog_cupcake_step1"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "gearworks:cog_cupcake_step1"
+        },
+        {
+          "item": "create:cogwheel"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:cog_cupcake_step2"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "gearworks:cog_cupcake_step2"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:cog_cupcake_step3"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "gearworks:cog_cupcake_step3"
+        },
+        {
+          "amount": 27000,
+          "fluid": "create:chocolate"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:cog_cupcake"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "gearworks:cog_cupcake_step1"
+  }
 }

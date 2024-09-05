@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "#Y#",
+    "BCB"
+  ],
+  "key": {
+    "#": {
+      "item": "create:cogwheel"
+    },
+    "Y": {
+      "item": "minecraft:black_wool"
+    },
+    "B": {
+      "item": "create:brass_ingot"
+    },
+    "C": {
+      "item": "create:goggles"
+    }
+  },
+  "result": {
+    "item": "gearworks:no_beta_hat"
+  }
+}
