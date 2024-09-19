@@ -1,19 +1,6 @@
 {
     "biomes": [
-        "meadow",
-        "plains",
-        "savanna",
-        "savanna_plateau",
-        "birch_forest",
-        "dark_forest",
-        "flower_forest",
-        "forest",
-        "old_growth_birch_forest",
-        "windswept_forest",
-        "plains",
-        "savanna_plateau",
-        "snowy_plains",
-        "sunflower_plains"
+        "dark_forest"
     ],
     "adapt_noise": false,
     "spawn_overrides": {},

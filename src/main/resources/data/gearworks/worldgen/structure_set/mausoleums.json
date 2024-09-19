@@ -1,0 +1,13 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 21055220,
+    "spacing": 69,
+    "separation": 26,
+    "spread_type": "triangular"
+  },
+  "structures": [{
+    "structure": "gearworks:mausoleums",
+    "weight": 1
+  }]
+}

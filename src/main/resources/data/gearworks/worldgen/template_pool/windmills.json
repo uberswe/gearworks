@@ -9,5 +9,13 @@
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"
         }
+    },{
+      "weight":1,
+      "element":{
+        "location":"gearworks:windmills/baniakac_windmill",
+        "processors":"minecraft:empty",
+        "projection":"rigid",
+        "element_type":"minecraft:single_pool_element"
+      }
     }]
 }

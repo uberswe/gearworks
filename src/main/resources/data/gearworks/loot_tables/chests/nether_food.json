@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 0,
+        "max": 1
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:golden_knife"
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 20
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_porkchop"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:porkchop"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:cabbage"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:onion"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potato"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot"
+        }
+      ]
+    }
+  ]
+}

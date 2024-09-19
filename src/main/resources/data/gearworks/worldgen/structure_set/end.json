@@ -1,0 +1,13 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 21055220,
+    "spacing": 60,
+    "separation": 12,
+    "spread_type": "triangular"
+  },
+  "structures": [{
+    "structure": "gearworks:end",
+    "weight": 1
+  }]
+}

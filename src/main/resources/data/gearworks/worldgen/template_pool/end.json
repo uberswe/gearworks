@@ -1,0 +1,13 @@
+{
+  "name":"gearworks:end",
+  "fallback":"minecraft:empty",
+  "elements":[{
+    "weight":1,
+    "element":{
+      "location":"gearworks:end/end_ninjakade_house",
+      "processors":"minecraft:empty",
+      "projection":"rigid",
+      "element_type":"minecraft:single_pool_element"
+    }
+  }]
+}

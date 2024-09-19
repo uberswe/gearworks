@@ -19,9 +19,15 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
+import net.minecraft.world.World;
 
 import java.util.UUID;
+
+import static com.gearworkssmp.gearworks.Gearworks.isBetaParticipant;
 
 public class NoBetaHat extends TrinketItem implements TrinketRenderer {
 	public NoBetaHat(Settings settings) {
@@ -45,5 +51,24 @@ public class NoBetaHat extends TrinketItem implements TrinketRenderer {
 			matrices.translate(0f,0.1f,0.45f);
 			itemRenderer.renderItem(entity, stack, ModelTransformationMode.HEAD, false, matrices, vertexConsumers, entity.getWorld(), light, OverlayTexture.DEFAULT_UV, 0);
 		}
+	}
+
+	@Override
+	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+		ItemStack stack = user.getStackInHand(hand);
+		if (!isBetaParticipant(user)) {
+			return TypedActionResult.fail(stack);
+		}
+		return super.use(world, user, hand);
+	}
+
+	@Override
+	public boolean canEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
+		if (entity instanceof PlayerEntity player) {
+			if (isBetaParticipant(player)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

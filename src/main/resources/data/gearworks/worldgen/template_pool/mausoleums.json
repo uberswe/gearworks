@@ -1,0 +1,13 @@
+{
+  "name":"gearworks:statues",
+  "fallback":"minecraft:empty",
+  "elements":[{
+    "weight":1,
+    "element":{
+      "location":"gearworks:mausoleums/red_crafter_mausoleum",
+      "processors":"minecraft:empty",
+      "projection":"rigid",
+      "element_type":"minecraft:single_pool_element"
+    }
+  }]
+}

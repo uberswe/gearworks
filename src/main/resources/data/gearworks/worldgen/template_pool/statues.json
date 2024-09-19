@@ -1,0 +1,29 @@
+{
+  "name":"gearworks:statues",
+  "fallback":"minecraft:empty",
+  "elements":[{
+    "weight":1,
+    "element":{
+      "location":"gearworks:statues/vipersoup_stone_statues",
+      "processors":"minecraft:empty",
+      "projection":"rigid",
+      "element_type":"minecraft:single_pool_element"
+    }
+  },{
+    "weight":1,
+    "element":{
+      "location":"gearworks:statues/prancing_blackie_monument",
+      "processors":"minecraft:empty",
+      "projection":"rigid",
+      "element_type":"minecraft:single_pool_element"
+    }
+  },{
+    "weight":1,
+    "element":{
+      "location":"gearworks:statues/goofyahhcat_uberswe_abandoned",
+      "processors":"minecraft:empty",
+      "projection":"rigid",
+      "element_type":"minecraft:single_pool_element"
+    }
+  }]
+}

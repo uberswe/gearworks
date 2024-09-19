@@ -13,6 +13,6 @@ Optional Dependencies:
 - MVS - Moog's Voyager Structures
 - Medieval Buildings - New Structures!
 
-This mod includes custom structures as part of world generation created by the following community members: Chelcooo, Decka, Gargafield, Platypus, RascallyRabbit, ViperSoup, Zalkie, PrancingPachy, iDavidFH, Kieranstinkyfeet, Ninjakade, Herobrine517223, SeanieMac99 and Guybrush
+This mod includes custom structures as part of world generation created by the following community members: Chelcooo, Decka, Gargafield, Platypus, RascallyRabbit, Red_Crafter, Goofyahhhcat, prancing_blackie, seaunicorn3, provingcamp4195, Caztheaxolotl, Andregamer3_0, ViperSoup, Zalkie, PrancingPachy, iDavidFH, Kieranstinkyfeet, Ninjakade, Herobrine517223, SeanieMac99 and Guybrush
 
-This mod includes a custom cosmetic item made by Green_Polska
+This mod includes custom cosmetic items and food made by Green_Polska

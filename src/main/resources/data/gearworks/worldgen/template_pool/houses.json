@@ -57,5 +57,13 @@
             "projection":"rigid",
             "element_type":"minecraft:single_pool_element"
         }
+    },{
+      "weight":1,
+      "element":{
+        "location":"gearworks:houses/andregamer3_0_house",
+        "processors":"minecraft:empty",
+        "projection":"rigid",
+        "element_type":"minecraft:single_pool_element"
+      }
     }]
 }
