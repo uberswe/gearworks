@@ -45,6 +45,7 @@ public class Gearworks implements ModInitializer {
 			"Racakata",
 			"Caztheaxolotl",
 			"SeanieMac99",
+			"ZALKIE"
 	};
 
 	@Override

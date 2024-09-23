@@ -8,13 +8,13 @@
   "spawn_overrides": {},
   "type": "minecraft:jigsaw",
   "start_pool": "gearworks:end",
-  "size": 9,
+  "size": 4,
   "step": "surface_structures",
   "start_height": {
     "absolute": 22
   },
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
-  "max_distance_from_center": 166,
+  "max_distance_from_center": 28,
   "terrain_adaptation": "beard_thin",
   "use_expansion_hack": false
 }
