@@ -1,0 +1,20 @@
+{
+	"replace": true,
+	"values": [
+		"minecraft:shield",
+		"minecraft:firework_rocket",
+		"minecraft:map",
+    {
+      "id": "#fxntstorage:back_pack",
+      "required": false
+    },
+    {
+      "id": "toms_storage:ts.adv_wireless_terminal",
+      "required": false
+    },
+    {
+      "id": "toms_storage:ts.wireless_terminal",
+      "required": false
+    }
+  ]
+}
