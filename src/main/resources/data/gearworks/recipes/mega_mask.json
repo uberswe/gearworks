@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "#Y#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bone"
+    },
+    "Y": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "result": {
+    "item": "gearworks:mega_mask"
+  }
+}

@@ -1,22 +1,21 @@
 package com.gearworkssmp.gearworks;
 
-import com.gearworkssmp.gearworks.events.PlayerDeathCallback;
-import com.gearworkssmp.gearworks.item.ModItems;
-import com.simibubi.create.Create;
-
-import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
-import net.fabricmc.api.ModInitializer;
-
-
-import net.minecraft.entity.damage.DamageSource;
-
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.network.ServerPlayerEntity;
+import java.time.LocalDate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Objects;
+import com.gearworkssmp.gearworks.events.PlayerDeathCallback;
+import com.gearworkssmp.gearworks.item.ModItems;
+import com.gearworkssmp.gearworks.item.ModLootTableModifiers;
+import com.gearworkssmp.gearworks.item.ModMobSpawnModifier;
+import com.simibubi.create.Create;
+
+import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
+import net.fabricmc.api.ModInitializer;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.network.ServerPlayerEntity;
 
 public class Gearworks implements ModInitializer {
 	public static final String ID = "gearworks";
@@ -57,6 +56,8 @@ public class Gearworks implements ModInitializer {
 				() -> () -> "{} is accessing Porting Lib from the server!"
 		), NAME);
 		ModItems.registerModItems();
+		ModLootTableModifiers.modifyLootTables();
+		ModMobSpawnModifier.modifyMobSpawns();
 		registerEvents();
 	}
 
@@ -78,5 +79,16 @@ public class Gearworks implements ModInitializer {
 			}
 		}
 		return false;
+	}
+
+	public static boolean isCloseToHalloween() {
+		LocalDate today = LocalDate.now();
+		// Define the start and end dates for the range
+		LocalDate startDate = LocalDate.of(today.getYear(), 10, 1);  // October 1st
+		LocalDate endDate = LocalDate.of(today.getYear(), 11, 5);    // November 5th
+
+		// Check if today is within the range (inclusive)
+		return (today.isEqual(startDate) || today.isAfter(startDate)) &&
+				(today.isEqual(endDate) || today.isBefore(endDate));
 	}
 }

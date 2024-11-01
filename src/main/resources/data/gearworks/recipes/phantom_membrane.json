@@ -1,0 +1,63 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "gearworks:ectoplasm"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "chance": 100.0,
+      "item": "minecraft:phantom_membrane"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "gearworks:ectoplasm_transitional"
+        },
+        {
+          "item": "minecraft:glowstone_dust"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:ectoplasm_transitional"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "gearworks:ectoplasm_transitional"
+        },
+        {
+          "item": "minecraft:sugar"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:ectoplasm_transitional"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "gearworks:ectoplasm_transitional"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:ectoplasm_transitional"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "gearworks:ectoplasm_transitional"
+  }
+}

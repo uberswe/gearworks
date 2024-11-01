@@ -1,8 +1,12 @@
 {
   "entities": [
-    "player"
+    "player",
+    "zombie",
+    "skeleton",
+    "creeper"
   ],
   "slots": [
-    "head/hat"
+    "head/hat",
+    "chest/back"
   ]
 }

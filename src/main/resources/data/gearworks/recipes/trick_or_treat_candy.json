@@ -1,0 +1,163 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:mushroom_stew"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "chance": 100.0,
+      "item": "gearworks:trick_or_treat_candy"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "gearworks:infused_stew"
+        },
+        {
+          "item": "gearworks:echoing_core"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "gearworks:infused_stew"
+        },
+        {
+          "item": "gearworks:ender_fragment"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "gearworks:infused_stew"
+        },
+        {
+          "item": "gearworks:shadow_essence"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "gearworks:infused_stew"
+        },
+        {
+          "item": "minecraft:amethyst_shard"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "gearworks:infused_stew"
+        },
+        {
+          "item": "minecraft:phantom_membrane"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ],
+      "results": [
+        {
+          "item": "gearworks:infused_stew"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "gearworks:infused_stew"
+  }
+}

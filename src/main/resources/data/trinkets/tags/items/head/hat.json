@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "gearworks:beta_hat",
-    "gearworks:no_beta_hat"
+    "gearworks:no_beta_hat",
+    "gearworks:jack_o_lantern",
+    "gearworks:mega_mask",
+    "gearworks:donut_hat",
+    "gearworks:witch_hat"
   ]
 }
