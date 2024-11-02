@@ -7,7 +7,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 
 public class ModFoodComponent {
-	private static final int MAX_LEVEL = 6;
+	private static final int MAX_LEVEL = 5;
 	public static final FoodComponent COG_CUPCAKE = new FoodComponent.Builder().hunger(5).saturationModifier(0.25f)
 			.statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 2400), 1.0f).build();
 	public static final FoodComponent INCOMPLETE_COG_CUPCAKE = new FoodComponent.Builder()
@@ -43,5 +43,6 @@ public class ModFoodComponent {
 			.statusEffect(new StatusEffectInstance(StatusEffects.UNLUCK, 600, RandomGenerator.getDefault().nextInt(MAX_LEVEL)), 0.1f)
 			.statusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 600, RandomGenerator.getDefault().nextInt(MAX_LEVEL)), 0.1f)
 			.statusEffect(new StatusEffectInstance(StatusEffects.WITHER, 600, RandomGenerator.getDefault().nextInt(MAX_LEVEL)), 0.1f)
+			.alwaysEdible()
 			.build();
 }

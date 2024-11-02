@@ -84,7 +84,12 @@ dependencies {
 //    modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:${rei_version}")
 //    modCompileOnly("dev.emi:emi:${emi_version}")
 
+	modApi "dev.architectury:architectury-fabric:${architectury_version}"
+
 	modImplementation "dev.emi:trinkets:${trinkets_version}"
+
+	//FTB Chunks
+	modCompileOnly files("jars/ftb-chunks-fabric-2001.3.1.jar", "jars/ftb-library-fabric-2001.2.4.jar", "jars/ftb-teams-fabric-2001.3.0.jar")
 }
 
 processResources {

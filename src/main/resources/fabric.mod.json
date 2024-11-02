@@ -16,6 +16,9 @@
   "entrypoints": {
     "main": [
       "com.gearworkssmp.gearworks.Gearworks"
+    ],
+    "client": [
+      "com.gearworkssmp.gearworks.GearworksClient"
     ]
   },
   "mixins": [

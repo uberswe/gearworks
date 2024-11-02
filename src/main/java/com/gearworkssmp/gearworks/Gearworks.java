@@ -1,6 +1,22 @@
 package com.gearworkssmp.gearworks;
 
 import java.time.LocalDate;
+import java.util.UUID;
+
+import com.gearworkssmp.gearworks.mixin.FTBChunksMapManagerMixin;
+
+import dev.ftb.mods.ftbchunks.FTBChunksWorldConfig;
+import dev.ftb.mods.ftbchunks.net.LoginDataPacket;
+import dev.ftb.mods.ftblibrary.snbt.SNBTCompoundTag;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import dev.ftb.mods.ftbteams.api.FTBTeamsAPI;
+
+import net.minecraft.network.PacketByteBuf;
+
+import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +36,9 @@ import net.minecraft.server.network.ServerPlayerEntity;
 public class Gearworks implements ModInitializer {
 	public static final String ID = "gearworks";
 	public static final String NAME = "Gearworks";
+	public static final String CLIENT_CHANNEL = "client_channel";
+	public static final String SWITCH_SERVER_MESSAGE = "SWITCHSERVER";
+	public static final Identifier SWITCH_SERVER_EVENT_ID = new Identifier(ID, CLIENT_CHANNEL);
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 	public static final String[] BETA_PARTICIPANTS = {
 			"uberswe",
@@ -63,6 +82,26 @@ public class Gearworks implements ModInitializer {
 
 	public static void registerEvents() {
 		PlayerDeathCallback.EVENT.register(Gearworks::onPlayerDeathEvent);
+		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+			ServerPlayerEntity player = handler.getPlayer();
+			sendServerJoinEventToClient(player);
+		});
+	}
+
+	private static void sendServerJoinEventToClient(ServerPlayerEntity player) {
+		PacketByteBuf buf = PacketByteBufs.create();
+		buf.writeString(SWITCH_SERVER_MESSAGE);
+
+		// Send the packet to the specific player
+		ServerPlayNetworking.send(player, SWITCH_SERVER_EVENT_ID, buf);
+
+
+		// This should already be done by FTB
+
+//		SNBTCompoundTag config = new SNBTCompoundTag();
+//		FTBChunksWorldConfig.CONFIG.write(config);
+//		UUID managerId = FTBTeamsAPI.api().getManager().getId();
+//		new LoginDataPacket(managerId, config).sendTo(player);
 	}
 
 	public static void onPlayerDeathEvent(ServerPlayerEntity player, DamageSource source) {
