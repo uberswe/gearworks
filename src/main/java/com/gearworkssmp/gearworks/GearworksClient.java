@@ -21,8 +21,6 @@ public class GearworksClient implements ClientModInitializer {
 					MinecraftServer server = client.getServer();
 					if (server != null) {
 						onJoinServer(server);
-					} else if (client.player != null){
-						client.player.sendMessage(Text.of("Server is null!"), false);
 					}
 				}
 			});
