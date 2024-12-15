@@ -1,30 +1,47 @@
 package com.gearworkssmp.gearworks.item;
 
 import com.gearworkssmp.gearworks.Gearworks;
+import com.gearworkssmp.gearworks.items.BeeHoodie;
 import com.gearworkssmp.gearworks.items.BetaHat;
+import com.gearworkssmp.gearworks.items.BlueRabbitVisorHat;
+import com.gearworkssmp.gearworks.items.CandyCane;
 import com.gearworkssmp.gearworks.items.CogCupcake;
 import com.gearworkssmp.gearworks.items.DonutHat;
 import com.gearworkssmp.gearworks.items.EchoingCore;
 import com.gearworkssmp.gearworks.items.Ectoplasm;
 import com.gearworkssmp.gearworks.items.EctoplasmTransitional;
+import com.gearworkssmp.gearworks.items.Eggnog;
+import com.gearworkssmp.gearworks.items.EmeraldTopHat;
 import com.gearworkssmp.gearworks.items.EnderFragment;
+import com.gearworkssmp.gearworks.items.FrozenFruitPopsicle;
+import com.gearworkssmp.gearworks.items.Fruitcake;
+import com.gearworkssmp.gearworks.items.GingerbreadCog;
+import com.gearworkssmp.gearworks.items.HolidayHam;
 import com.gearworkssmp.gearworks.items.IncompleteCogCupcake;
 import com.gearworkssmp.gearworks.items.InfusedStew;
 import com.gearworkssmp.gearworks.items.JackOLantern;
 import com.gearworkssmp.gearworks.items.MegaMask;
+import com.gearworkssmp.gearworks.items.MulledWine;
 import com.gearworkssmp.gearworks.items.NoBetaHat;
+import com.gearworkssmp.gearworks.items.RoastedChestnuts;
 import com.gearworkssmp.gearworks.items.ShadowEssence;
+import com.gearworkssmp.gearworks.items.SnowberryPie;
+import com.gearworkssmp.gearworks.items.SteampunkSantaHat;
 import com.gearworkssmp.gearworks.items.TrickOrTreatCandy;
 
+import com.gearworkssmp.gearworks.items.WinterStew;
 import com.gearworkssmp.gearworks.items.WitchHat;
 
 import com.gearworkssmp.gearworks.items.WitchRobes;
+
+import com.mojang.datafixers.kinds.IdF;
 
 import dev.emi.trinkets.api.client.TrinketRenderer;
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
@@ -51,6 +68,22 @@ public class ModItems {
 	public static final Item DONUT_HAT = registerItem("donut_hat", new DonutHat(new FabricItemSettings()));
 	public static final Item WITCH_HAT = registerItem("witch_hat", new WitchHat(new FabricItemSettings()));
 	public static final Item WITCH_ROBES = registerItem("witch_robes", new WitchRobes(new FabricItemSettings()));
+	public static final Item GREEN_PRESENT_BLOCK_ITEM = registerItem("green_present", new BlockItem(ModBlocks.GREEN_PRESENT_BLOCK, new FabricItemSettings()));
+	public static final Item RED_PRESENT_BLOCK_ITEM = registerItem("red_present", new BlockItem(ModBlocks.RED_PRESENT_BLOCK, new FabricItemSettings()));
+	public static final Item BEE_HOODIE = registerItem("bee_hoodie", new BeeHoodie(new FabricItemSettings()));
+	public static final Item BLUE_RABBIT_VISOR_HAT = registerItem("blue_rabbit_visor_hat", new BlueRabbitVisorHat(new FabricItemSettings()));
+	public static final Item EMERALD_TOP_HAT = registerItem("emerald_top_hat", new EmeraldTopHat(new FabricItemSettings()));
+	public static final Item STEAMPUNK_SANTA_HAT = registerItem("steampunk_santa_hat", new SteampunkSantaHat(new FabricItemSettings()));
+	public static final Item CANDY_CANE = registerItem("candy_cane", new CandyCane(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
+	public static final Item EGGNOG = registerItem("eggnog", new Eggnog(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
+	public static final Item FROZEN_FRUIT_POPSICLE = registerItem("frozen_fruit_popsicle", new FrozenFruitPopsicle(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
+	public static final Item FRUITCAKE = registerItem("fruitcake", new Fruitcake(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
+	public static final Item GINGERBREAD_COG = registerItem("gingerbread_cog", new GingerbreadCog(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
+	public static final Item HOLIDAY_HAM = registerItem("holiday_ham", new HolidayHam(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
+	public static final Item MULLED_WINE = registerItem("mulled_wine", new MulledWine(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
+	public static final Item ROASTED_CHESTNUTS = registerItem("roasted_chestnuts", new RoastedChestnuts(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
+	public static final Item SNOWBERRY_PIE = registerItem("snowberry_pie", new SnowberryPie(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
+	public static final Item WINTER_STEW = registerItem("winter_stew", new WinterStew(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
 
 	private static void addItemsToCombatItemGroup(FabricItemGroupEntries group) {
 		group.add(BETA_HAT);
@@ -60,11 +93,25 @@ public class ModItems {
 		group.add(DONUT_HAT);
 		group.add(WITCH_HAT);
 		group.add(WITCH_ROBES);
+		group.add(BEE_HOODIE);
+		group.add(BLUE_RABBIT_VISOR_HAT);
+		group.add(EMERALD_TOP_HAT);
+		group.add(STEAMPUNK_SANTA_HAT);
 	}
 
 	private static void addItemsToFoodItemGroup(FabricItemGroupEntries group) {
 		group.add(COG_CUPCAKE);
 		group.add(TRICK_OR_TREAT_CANDY);
+		group.add(CANDY_CANE);
+		group.add(EGGNOG);
+		group.add(FROZEN_FRUIT_POPSICLE);
+		group.add(FRUITCAKE);
+		group.add(GINGERBREAD_COG);
+		group.add(HOLIDAY_HAM);
+		group.add(MULLED_WINE);
+		group.add(ROASTED_CHESTNUTS);
+		group.add(SNOWBERRY_PIE);
+		group.add(WINTER_STEW);
 	}
 
 	private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries group) {
@@ -72,6 +119,11 @@ public class ModItems {
 		group.add(ECTOPLASM);
 		group.add(ENDER_FRAGMENT);
 		group.add(SHADOW_ESSENCE);
+	}
+
+	private static void addItemsToBuildingBlockItemGroup(FabricItemGroupEntries group) {
+		group.add(GREEN_PRESENT_BLOCK_ITEM);
+		group.add(RED_PRESENT_BLOCK_ITEM);
 	}
 
 	private static Item registerItem(String name, Item item) {
@@ -87,5 +139,8 @@ public class ModItems {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems::addItemsToCombatItemGroup);
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::addItemsToFoodItemGroup);
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientsItemGroup);
-	};
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(ModItems::addItemsToBuildingBlockItemGroup);
+	}
+
+	;
 }

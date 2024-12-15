@@ -134,7 +134,7 @@ public class ModLootTableModifiers {
 		if (Gearworks.isCloseToHalloween()) {
 			return 1.0f;
 		} else {
-			return 0.01f;
+			return 0.1f;
 		}
 	}
 }

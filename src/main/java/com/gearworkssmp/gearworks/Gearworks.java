@@ -1,21 +1,26 @@
 package com.gearworkssmp.gearworks;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
-import com.gearworkssmp.gearworks.mixin.FTBChunksMapManagerMixin;
+import com.gearworkssmp.gearworks.events.ScheduledSpawn;
 
-import dev.ftb.mods.ftbchunks.FTBChunksWorldConfig;
-import dev.ftb.mods.ftbchunks.net.LoginDataPacket;
-import dev.ftb.mods.ftblibrary.snbt.SNBTCompoundTag;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import dev.ftb.mods.ftbteams.api.FTBTeamsAPI;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.network.PacketByteBuf;
 
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
@@ -32,6 +37,8 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
+import virtuoel.pehkui.api.ScaleData;
+import virtuoel.pehkui.api.ScaleTypes;
 
 public class Gearworks implements ModInitializer {
 	public static final String ID = "gearworks";
@@ -40,6 +47,8 @@ public class Gearworks implements ModInitializer {
 	public static final String SWITCH_SERVER_MESSAGE = "SWITCHSERVER";
 	public static final Identifier SWITCH_SERVER_EVENT_ID = new Identifier(ID, CLIENT_CHANNEL);
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
+	public static final Map<UUID, Long> SCHEDULED_REVERTS = new HashMap<>();
+	public static final List<ScheduledSpawn> SCHEDULED_CREEPER_SPAWNS = new ArrayList<>();
 	public static final String[] BETA_PARTICIPANTS = {
 			"uberswe",
 			"Goofyahhhcat",
@@ -64,7 +73,9 @@ public class Gearworks implements ModInitializer {
 			"Caztheaxolotl",
 			"SeanieMac99",
 			"ZALKIE",
-			"_Kuha"
+			"_Kuha",
+			"ViperSoup",
+			"prancingpachy"
 	};
 
 	@Override
@@ -78,6 +89,48 @@ public class Gearworks implements ModInitializer {
 		ModLootTableModifiers.modifyLootTables();
 		ModMobSpawnModifier.modifyMobSpawns();
 		registerEvents();
+
+		ServerTickEvents.END_SERVER_TICK.register(server -> {
+			long currentTime = server.getOverworld().getTime();
+			// Get current game time from the overworld (or any stable dimension)
+
+			// We'll collect any players whose revert time has passed
+			List<UUID> toRevert = new ArrayList<>();
+
+			for (Map.Entry<UUID, Long> entry : SCHEDULED_REVERTS.entrySet()) {
+				UUID playerId = entry.getKey();
+				long revertTime = entry.getValue();
+
+				if (currentTime >= revertTime) {
+					// Time to revert the scale
+					ServerPlayerEntity player = server.getPlayerManager().getPlayer(playerId);
+					if (player != null) {
+						revertScale(player);
+					}
+					toRevert.add(playerId);
+				}
+			}
+
+			// Remove completed tasks from the map
+			for (UUID id : toRevert) {
+				SCHEDULED_REVERTS.remove(id);
+			}
+
+			List<ScheduledSpawn> toSpawnNow = new ArrayList<>();
+
+			// Check scheduled spawns
+			for (ScheduledSpawn task : SCHEDULED_CREEPER_SPAWNS) {
+				if (currentTime >= task.spawnTime) {
+					toSpawnNow.add(task);
+				}
+			}
+
+			// Spawn and remove them from the main list
+			for (ScheduledSpawn task : toSpawnNow) {
+				spawnCreeper(server, task);
+				SCHEDULED_CREEPER_SPAWNS.remove(task);
+			}
+		});
 	}
 
 	public static void registerEvents() {
@@ -85,6 +138,7 @@ public class Gearworks implements ModInitializer {
 		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
 			ServerPlayerEntity player = handler.getPlayer();
 			sendServerJoinEventToClient(player);
+			revertScale(player);
 		});
 	}
 
@@ -94,14 +148,6 @@ public class Gearworks implements ModInitializer {
 
 		// Send the packet to the specific player
 		ServerPlayNetworking.send(player, SWITCH_SERVER_EVENT_ID, buf);
-
-
-		// This should already be done by FTB
-
-//		SNBTCompoundTag config = new SNBTCompoundTag();
-//		FTBChunksWorldConfig.CONFIG.write(config);
-//		UUID managerId = FTBTeamsAPI.api().getManager().getId();
-//		new LoginDataPacket(managerId, config).sendTo(player);
 	}
 
 	public static void onPlayerDeathEvent(ServerPlayerEntity player, DamageSource source) {
@@ -129,5 +175,34 @@ public class Gearworks implements ModInitializer {
 		// Check if today is within the range (inclusive)
 		return (today.isEqual(startDate) || today.isAfter(startDate)) &&
 				(today.isEqual(endDate) || today.isBefore(endDate));
+	}
+
+	public static void revertScale(PlayerEntity player) {
+		ScaleData scaleData = ScaleTypes.BASE.getScaleData(player);
+		scaleData.setTargetScale(1.0f);
+		scaleData.setScaleTickDelay(60);
+
+		// Remove Speed III effect if present
+		if (player.hasStatusEffect(StatusEffects.SPEED)) {
+			player.removeStatusEffect(StatusEffects.SPEED);
+		}
+	}
+
+	private void spawnCreeper(MinecraftServer server, ScheduledSpawn task) {
+		ServerWorld world = server.getOverworld();
+
+		// Locate the player if needed
+		ServerPlayerEntity player = server.getPlayerManager().getPlayer(task.playerUuid);
+
+		if (player == null) {
+			return; // Player not online, skip
+		}
+
+		CreeperEntity creeper = EntityType.CREEPER.create(world);
+		if (creeper != null) {
+			creeper.refreshPositionAndAngles(task.x, task.y, task.z, world.random.nextFloat() * 360F, 0.0F);
+			world.spawnEntity(creeper);
+			creeper.setTarget(player);
+		}
 	}
 }

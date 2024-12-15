@@ -1,11 +1,7 @@
 package com.gearworkssmp.gearworks;
-
-import dev.ftb.mods.ftbchunks.FTBChunks;
-import dev.ftb.mods.ftbchunks.client.map.MapManager;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.text.Text;
 
 public class GearworksClient implements ClientModInitializer {
 
