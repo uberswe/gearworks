@@ -2,8 +2,8 @@ package com.gearworkssmp.gearworks.events;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.server.network.ServerPlayerEntity;
 
 public interface PlayerDeathCallback {
 	Event<PlayerDeathCallback> EVENT = EventFactory.createArrayBacked(PlayerDeathCallback.class, (listeners) -> (player, source) -> {
@@ -12,5 +12,5 @@ public interface PlayerDeathCallback {
 		}
 	});
 
-	void onPlayerDeath(ServerPlayer playerEntity, DamageSource source);
+	void onPlayerDeath(ServerPlayerEntity playerEntity, DamageSource source);
 }

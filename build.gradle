@@ -54,23 +54,10 @@ configurations.configureEach {
 	}
 }
 
-loom {
-	runs {
-		// This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
-		datagen {
-			client()
-
-			name "Data Generation"
-			vmArg "-Dfabric-api.datagen"
-		}
-	}
-}
-
 dependencies {
 	// Setup
 	minecraft("com.mojang:minecraft:${minecraft_version}")
-	mappings loom.officialMojangMappings()
-	//mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 //	mappings(loom.layered {
 //		it.mappings("org.quiltmc:quilt-mappings:${minecraft_version}+build.${qm_version}:intermediary-v2")
 //		it.parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
