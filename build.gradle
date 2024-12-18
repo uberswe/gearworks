@@ -42,10 +42,6 @@ repositories {
 		name = "Ladysnake Libs"
 		url = 'https://maven.ladysnake.org/releases'
 	}
-	maven {
-		name = "tom5454 maven"
-		url = "https://raw.githubusercontent.com/tom5454/maven/main"
-	}
 }
 
 configurations.configureEach {
