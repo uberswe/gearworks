@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "create:cinder_flour"
+    },
+    {
+      "amount": 27000,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "item": "gearworks:mulled_wine",
+      "count": 10
+    }
+  ],
+  "heatRequirement": "heated"
+}

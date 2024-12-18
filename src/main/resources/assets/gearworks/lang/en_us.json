@@ -40,10 +40,14 @@
   "item.gearworks.steampunk_santa_hat": "Santa Hat",
   "item.gearworks.red_present": "Red Present",
   "item.gearworks.green_present": "Green Present",
+  "item.gearworks.candy_cane_block": "Candy Cane",
+  "item.gearworks.chocolate_block": "Chocolate Bricks",
+  "item.gearworks.milk_chocolate_block": "Milk Chocolate Bricks",
+  "item.gearworks.dark_chocolate_block": "Dark Chocolate Bricks",
   "item.gearworks.candy_cane": "Candy Cane",
   "item.gearworks.eggnog": "Eggnog",
   "item.gearworks.frozen_fruit_popsicle": "Frozen Fruit Popsicle",
-  "item.gearworks.fruitcake": "Fruitcake",
+  "item.gearworks.fruitcake": "Festive Fruitcake",
   "item.gearworks.gingerbread_cog": "Gingerbread Cog",
   "item.gearworks.holiday_ham": "Holiday Ham",
   "item.gearworks.mulled_wine": "Mulled Wine",
@@ -51,5 +55,9 @@
   "item.gearworks.snowberry_pie": "Snowberry Pie",
   "item.gearworks.winter_stew": "Winter Stew",
   "block.gearworks.red_present": "Red Present",
-  "block.gearworks.green_present": "Green Present"
+  "block.gearworks.green_present": "Green Present",
+  "block.gearworks.candy_cane_block": "Candy Cane",
+  "block.gearworks.chocolate_block": "Chocolate Bricks",
+  "block.gearworks.milk_chocolate_block": "Milk Chocolate Bricks",
+  "block.gearworks.dark_chocolate_block": "Dark Chocolate Bricks"
 }

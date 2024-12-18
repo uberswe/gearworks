@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "Y",
+    "B",
+    "C"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:sweet_berries"
+    },
+    "B": {
+      "item": "minecraft:snowball"
+    },
+    "C": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "gearworks:frozen_fruit_popsicle"
+  }
+}

@@ -14,14 +14,24 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.CreeperEntity;
+import net.minecraft.entity.passive.SheepEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.PacketByteBuf;
 
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
+
+import net.minecraft.util.math.random.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,6 +59,8 @@ public class Gearworks implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 	public static final Map<UUID, Long> SCHEDULED_REVERTS = new HashMap<>();
 	public static final List<ScheduledSpawn> SCHEDULED_CREEPER_SPAWNS = new ArrayList<>();
+	public static final Map<UUID, Long> PINATA_BURSTS = new HashMap<>();
+	public static final Map<UUID, Long> SCHEDULED_VEX_DESPAWN = new HashMap<>();
 	public static final String[] BETA_PARTICIPANTS = {
 			"uberswe",
 			"Goofyahhhcat",
@@ -114,6 +126,52 @@ public class Gearworks implements ModInitializer {
 			// Remove completed tasks from the map
 			for (UUID id : toRevert) {
 				SCHEDULED_REVERTS.remove(id);
+			}
+
+			List<UUID> toRemove = new ArrayList<>();
+
+			for (Map.Entry<UUID, Long> entry : PINATA_BURSTS.entrySet()) {
+				UUID sheepId = entry.getKey();
+				long burstTime = entry.getValue();
+
+				if (currentTime >= burstTime) {
+					// Time to burst this pinata
+					// Locate the sheep and burst it
+					for (ServerWorld world : server.getWorlds()) {
+						var entity = world.getEntity(sheepId);
+						if (entity instanceof SheepEntity sheep) {
+							burstPinata(sheep);
+							toRemove.add(sheepId);
+							break;
+						}
+					}
+				}
+			}
+
+			// Remove completed tasks
+			for (UUID id : toRemove) {
+				PINATA_BURSTS.remove(id);
+			}
+
+			toRemove = new ArrayList<>();
+
+			for (Map.Entry<UUID, Long> entry : SCHEDULED_VEX_DESPAWN.entrySet()) {
+				UUID vexId = entry.getKey();
+				long despawnTime = entry.getValue();
+				if (currentTime >= despawnTime) {
+					// Time to remove this Vex
+					for (ServerWorld world : server.getWorlds()) {
+						var entity = world.getEntity(vexId);
+						if (entity != null) {
+							entity.remove(Entity.RemovalReason.DISCARDED);
+						}
+					}
+					toRemove.add(vexId);
+				}
+			}
+
+			for (UUID id : toRemove) {
+				SCHEDULED_VEX_DESPAWN.remove(id);
 			}
 
 			List<ScheduledSpawn> toSpawnNow = new ArrayList<>();
@@ -204,5 +262,35 @@ public class Gearworks implements ModInitializer {
 			world.spawnEntity(creeper);
 			creeper.setTarget(player);
 		}
+	}
+
+	public static void burstPinata(SheepEntity sheep) {
+		ServerWorld world = (ServerWorld) sheep.getWorld();
+		double x = sheep.getX();
+		double y = sheep.getY();
+		double z = sheep.getZ();
+
+		// Kill/remove the sheep
+		sheep.remove(Entity.RemovalReason.DISCARDED);
+
+		// Drop some loot
+		// Define a set of possible items
+		Item[] lootPool = {
+				Items.APPLE, Items.GOLD_INGOT, Items.FEATHER,
+				Items.EMERALD, Items.COOKIE, Items.BREAD, ModItems.TRICK_OR_TREAT_CANDY
+		};
+
+		Random random = world.getRandom();
+		int itemCount = 5 + random.nextInt(6); // 5 to 10 items
+
+		for (int i = 0; i < itemCount; i++) {
+			Item chosen = lootPool[random.nextInt(lootPool.length)];
+			ItemStack stack = new ItemStack(chosen, 1 + random.nextInt(3)); // 1-3 of chosen item
+			ItemEntity itemEntity = new ItemEntity(world, x, y, z, stack);
+			world.spawnEntity(itemEntity);
+		}
+
+		// Optional: spawn particles or play a sound
+		world.playSound(null, x, y, z, SoundEvents.ENTITY_FIREWORK_ROCKET_BLAST, SoundCategory.PLAYERS, 1.0F, 1.0F);
 	}
 }

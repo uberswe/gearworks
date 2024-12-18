@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "Y",
+    "B",
+    "C"
+  ],
+  "key": {
+    "Y": {
+      "item": "supplementaries:sugar_cube"
+    },
+    "B": {
+      "item": "minecraft:red_dye"
+    },
+    "C": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "gearworks:candy_cane"
+  }
+}

@@ -98,9 +98,6 @@ dependencies {
 	modApi("com.github.Virtuoel:Pehkui:${pehkui_version}", {
 		exclude group: "net.fabricmc.fabric-api"
 	})
-	// Tom's Storage mod from tom5454 maven
-	// Check the repository or mod docs for the correct GAV (group:artifact:version)
-	modImplementation "com.tom5454.toms_storage:TomsStorageFabric-1.20:1.6.8"
 }
 
 processResources {

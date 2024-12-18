@@ -4,7 +4,6 @@
   "package": "com.gearworkssmp.gearworks.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "CraftingTerminalMenuMixin",
     "ServerPlayerMixin"
   ],
   "client": [

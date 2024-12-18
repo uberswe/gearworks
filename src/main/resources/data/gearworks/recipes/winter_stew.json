@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "minecraft:snowball"
+    }
+  ],
+  "results": [
+    {
+      "item": "gearworks:winter_stew",
+      "count": 2
+    }
+  ],
+  "heatRequirement": "heated"
+}

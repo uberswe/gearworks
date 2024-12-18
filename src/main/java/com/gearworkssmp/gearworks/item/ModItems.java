@@ -34,8 +34,6 @@ import com.gearworkssmp.gearworks.items.WitchHat;
 
 import com.gearworkssmp.gearworks.items.WitchRobes;
 
-import com.mojang.datafixers.kinds.IdF;
-
 import dev.emi.trinkets.api.client.TrinketRenderer;
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -47,6 +45,8 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+
+import static com.gearworkssmp.gearworks.item.ModBlocks.*;
 
 public class ModItems {
 
@@ -84,6 +84,10 @@ public class ModItems {
 	public static final Item ROASTED_CHESTNUTS = registerItem("roasted_chestnuts", new RoastedChestnuts(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
 	public static final Item SNOWBERRY_PIE = registerItem("snowberry_pie", new SnowberryPie(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
 	public static final Item WINTER_STEW = registerItem("winter_stew", new WinterStew(new FabricItemSettings().food(ModFoodComponent.COG_CUPCAKE)));
+	public static final Item CANDY_CANE_BLOCK_ITEM = registerItem("candy_cane_block", new BlockItem(CANDY_CANE_BLOCK, new Item.Settings()));
+	public static final Item CHOCOLATE_BLOCK_ITEM = registerItem("chocolate_block", new BlockItem(CHOCOLATE_BLOCK, new Item.Settings()));
+	public static final Item DARK_CHOCOLATE_BLOCK_ITEM = registerItem("dark_chocolate_block", new BlockItem(DARK_CHOCOLATE_BLOCK, new Item.Settings()));
+	public static final Item MILK_CHOCOLATE_BLOCK_ITEM = registerItem("milk_chocolate_block", new BlockItem(MILK_CHOCOLATE_BLOCK, new Item.Settings()));
 
 	private static void addItemsToCombatItemGroup(FabricItemGroupEntries group) {
 		group.add(BETA_HAT);
@@ -124,6 +128,10 @@ public class ModItems {
 	private static void addItemsToBuildingBlockItemGroup(FabricItemGroupEntries group) {
 		group.add(GREEN_PRESENT_BLOCK_ITEM);
 		group.add(RED_PRESENT_BLOCK_ITEM);
+		group.add(CANDY_CANE_BLOCK_ITEM);
+		group.add(CHOCOLATE_BLOCK_ITEM);
+		group.add(DARK_CHOCOLATE_BLOCK_ITEM);
+		group.add(MILK_CHOCOLATE_BLOCK_ITEM);
 	}
 
 	private static Item registerItem(String name, Item item) {

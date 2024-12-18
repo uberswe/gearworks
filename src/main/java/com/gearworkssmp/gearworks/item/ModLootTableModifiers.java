@@ -30,7 +30,7 @@ public class ModLootTableModifiers {
 			if (WARDEN_ID.equals(id)) {
 				LootPool.Builder poolBuilder = LootPool.builder()
 						.rolls(ConstantLootNumberProvider.create(1))
-						.conditionally(RandomChanceLootCondition.builder(0.5F * halloweenModifier()))
+						.conditionally(RandomChanceLootCondition.builder(1F))
 						.with(ItemEntry.builder(ModItems.ECHOING_CORE))
 						.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 1.0F)).build());
 				tableBuilder.pool(poolBuilder.build());
