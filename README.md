@@ -7,6 +7,7 @@ Required Dependencies:
 - Create
 - Create: Deco
 - Create: Steam & Rails
+- Pehkui
 
 Optional Dependencies:
 - Trinkets
