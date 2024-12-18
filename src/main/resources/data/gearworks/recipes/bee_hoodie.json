@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "Y",
+    "B",
+    "C"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:bee_nest"
+    },
+    "B": {
+      "item": "minecraft:yellow_dye"
+    },
+    "C": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "result": {
+    "item": "gearworks:bee_hoodie"
+  }
+}

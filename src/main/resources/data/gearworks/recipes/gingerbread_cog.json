@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "create:dough"
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": "2"
+    },
+    {
+      "item": "minecraft:brown_dye"
+    },
+    {
+      "item": "create:cogwheel"
+    }
+  ],
+  "results": [
+    {
+      "item": "gearworks:gingerbread_cog",
+      "count": 1
+    }
+  ],
+  "heatRequirement": "heated"
+}

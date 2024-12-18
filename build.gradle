@@ -4,6 +4,7 @@
 plugins {
 	id "fabric-loom" version "1.5.+"
 	id "io.github.p03w.machete" version "1.+" // automatic jar compressing on build
+	id 'java'
 	id "maven-publish"
 }
 
@@ -19,6 +20,8 @@ String buildNumber = System.getenv("GITHUB_RUN_NUMBER")
 version = "${mod_version}+${minecraft_version}" + (buildNumber != null ? "-${buildNumber}" : "")
 
 repositories {
+	mavenCentral()
+	maven { url 'https://maven.fabricmc.net/' }
 	maven { url = "https://maven.shedaniel.me/" } // Cloth Config, REI
 	maven { url = "https://maven.blamejared.com/" } // JEI
 	maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
@@ -88,8 +91,9 @@ dependencies {
 
 	modImplementation "dev.emi:trinkets:${trinkets_version}"
 
-	//FTB Chunks
-	modCompileOnly files("jars/ftb-chunks-fabric-2001.3.1.jar", "jars/ftb-library-fabric-2001.2.4.jar", "jars/ftb-teams-fabric-2001.3.0.jar")
+	modApi("com.github.Virtuoel:Pehkui:${pehkui_version}", {
+		exclude group: "net.fabricmc.fabric-api"
+	})
 }
 
 processResources {
@@ -119,6 +123,9 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
 	withSourcesJar()
 }
 

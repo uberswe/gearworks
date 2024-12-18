@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "minecraft:mushroom_stew"
   },
-  "loops": 2,
+  "loops": 1,
   "results": [
     {
       "chance": 100.0,

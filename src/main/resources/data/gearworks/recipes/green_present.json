@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "B",
+    "C"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:green_dye"
+    },
+    "C": {
+      "item": "minecraft:oak_wood"
+    }
+  },
+  "result": {
+    "item": "gearworks:green_present"
+  }
+}

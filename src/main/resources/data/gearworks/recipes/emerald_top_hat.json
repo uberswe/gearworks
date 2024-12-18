@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "#Y#",
+    "BCB"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:emerald_block"
+    },
+    "Y": {
+      "item": "minecraft:netherite_block"
+    },
+    "B": {
+      "item": "minecraft:black_wool"
+    },
+    "C": {
+      "item": "numismatics:sun"
+    }
+  },
+  "result": {
+    "item": "gearworks:emerald_top_hat"
+  }
+}

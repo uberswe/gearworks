@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BBB",
+    "BYB",
+    "BBB"
+  ],
+  "key": {
+    "Y": {
+      "item": "supplementaries:sugar_cube"
+    },
+    "B": {
+      "item": "create:bar_of_chocolate"
+    }
+  },
+  "result": {
+    "item": "gearworks:chocolate_block"
+  }
+}

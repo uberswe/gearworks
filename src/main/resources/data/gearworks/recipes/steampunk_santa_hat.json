@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "#Y#",
+    "BCB"
+  ],
+  "key": {
+    "#": {
+      "item": "create:cogwheel"
+    },
+    "Y": {
+      "item": "minecraft:red_wool"
+    },
+    "B": {
+      "item": "create:brass_casing"
+    },
+    "C": {
+      "item": "create:goggles"
+    }
+  },
+  "result": {
+    "item": "gearworks:steampunk_santa_hat"
+  }
+}

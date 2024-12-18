@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "YX",
+    "0B",
+    "0C"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:cake"
+    },
+    "0": {
+      "item": "minecraft:sugar"
+    },
+    "X": {
+      "item": "minecraft:gold_nugget"
+    },
+    "B": {
+      "item": "minecraft:apple"
+    },
+    "C": {
+      "item": "minecraft:sweet_berries"
+    }
+  },
+  "result": {
+    "item": "gearworks:fruitcake"
+  }
+}

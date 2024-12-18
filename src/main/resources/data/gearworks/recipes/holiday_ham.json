@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:porkchop"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "farmersdelight:bacon"
+    }
+  ],
+  "results": [
+    {
+      "item": "gearworks:holiday_ham",
+      "count": 1
+    }
+  ],
+  "heatRequirement": "heated"
+}

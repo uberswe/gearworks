@@ -7,8 +7,7 @@
     "ServerPlayerMixin"
   ],
   "client": [
-    "MinecraftMixin",
-    "FTBChunksMapManagerMixin"
+    "MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1

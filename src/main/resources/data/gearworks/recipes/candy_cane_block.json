@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BYB",
+    "BYB",
+    "BYB"
+  ],
+  "key": {
+    "Y": {
+      "item": "supplementaries:sugar_cube"
+    },
+    "B": {
+      "item": "minecraft:beetroot"
+    }
+  },
+  "result": {
+    "item": "gearworks:candy_cane_block"
+  }
+}

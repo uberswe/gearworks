@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "Y",
+    "B",
+    "C"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:blue_dye"
+    },
+    "B": {
+      "item": "minecraft:rabbit_hide"
+    },
+    "C": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "result": {
+    "item": "gearworks:blue_rabbit_visor_hat"
+  }
+}

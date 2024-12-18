@@ -3,10 +3,7 @@ package com.gearworkssmp.gearworks.items;
 import java.util.List;
 import java.util.UUID;
 
-import org.jetbrains.annotations.Nullable;
-
 import com.google.common.collect.Multimap;
-
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketItem;
 import dev.emi.trinkets.api.client.TrinketRenderer;
@@ -27,6 +24,8 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
+
+import org.jetbrains.annotations.Nullable;
 
 public class DonutHat extends TrinketItem implements TrinketRenderer {
 	public DonutHat(Settings settings) {
