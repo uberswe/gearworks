@@ -93,10 +93,10 @@ public class TrickOrTreatActions {
 		float randomScale;
 		if (player.getRandom().nextFloat() > 0.5f) {
 			player.sendMessage(Text.literal("You feel yourself getting a bit taller"), false);
-			randomScale = 1f + player.getRandom().nextFloat() * 20.0f;
+			randomScale = 5f + player.getRandom().nextFloat() * 20.0f;
 		} else {
 			player.sendMessage(Text.literal("You shrink in size, but feel faster?!"), false);
-			randomScale = 1f - player.getRandom().nextFloat() * 0.99f;
+			randomScale = 0.5f - player.getRandom().nextFloat() * 0.99f;
 		}
 
 		ScaleData scaleData = ScaleTypes.BASE.getScaleData(player);
