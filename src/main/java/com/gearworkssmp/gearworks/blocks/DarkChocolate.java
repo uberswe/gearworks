@@ -13,6 +13,8 @@ import java.util.List;
 
 public class DarkChocolate extends Block {
 	public DarkChocolate() {
-		super(Settings.copy(Blocks.STONE));
+		super(Settings.copy(Blocks.STONE)
+				.requiresTool()
+				.strength(1.0F, 3.0F));
 	}
 }

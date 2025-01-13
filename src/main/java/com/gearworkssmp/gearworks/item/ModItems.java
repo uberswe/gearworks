@@ -88,6 +88,9 @@ public class ModItems {
 	public static final Item CHOCOLATE_BLOCK_ITEM = registerItem("chocolate_block", new BlockItem(CHOCOLATE_BLOCK, new Item.Settings()));
 	public static final Item DARK_CHOCOLATE_BLOCK_ITEM = registerItem("dark_chocolate_block", new BlockItem(DARK_CHOCOLATE_BLOCK, new Item.Settings()));
 	public static final Item MILK_CHOCOLATE_BLOCK_ITEM = registerItem("milk_chocolate_block", new BlockItem(MILK_CHOCOLATE_BLOCK, new Item.Settings()));
+	public static final Item TECHNICAL_MASTERY_TROPHY_ITEM = registerItem("technical_mastery_trophy", new BlockItem(TECHNICAL_MASTERY_TROPHY_BLOCK, new Item.Settings()));
+	public static final Item MOST_ENTERTAINING_TROPHY_ITEM = registerItem("most_entertaining_trophy", new BlockItem(MOST_ENTERTAINING_TROPHY_BLOCK, new Item.Settings()));
+	public static final Item ARTISTIC_EXCELLENCE_TROPHY_ITEM = registerItem("artistic_excellence_trophy", new BlockItem(ARTISTIC_EXCELLENCE_TROPHY_BLOCK, new Item.Settings()));
 
 	private static void addItemsToCombatItemGroup(FabricItemGroupEntries group) {
 		group.add(BETA_HAT);

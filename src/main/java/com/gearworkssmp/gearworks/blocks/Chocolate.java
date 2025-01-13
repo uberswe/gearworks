@@ -13,6 +13,8 @@ import net.minecraft.world.BlockView;
 
 public class Chocolate extends Block {
 	public Chocolate() {
-		super(Settings.copy(Blocks.STONE));
+		super(Settings.copy(Blocks.STONE)
+				.requiresTool()
+				.strength(1.0F, 3.0F) );
 	}
 }

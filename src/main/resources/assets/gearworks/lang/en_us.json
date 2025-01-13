@@ -59,5 +59,8 @@
   "block.gearworks.candy_cane_block": "Candy Cane",
   "block.gearworks.chocolate_block": "Chocolate Bricks",
   "block.gearworks.milk_chocolate_block": "Milk Chocolate Bricks",
-  "block.gearworks.dark_chocolate_block": "Dark Chocolate Bricks"
+  "block.gearworks.dark_chocolate_block": "Dark Chocolate Bricks",
+  "block.gearworks.artistic_excellence_trophy": "Artistic Excellence Trophy",
+  "block.gearworks.technical_mastery_trophy": "Technical Mastery Trophy",
+  "block.gearworks.most_entertaining_trophy": "Most Entertaining Trophy"
 }

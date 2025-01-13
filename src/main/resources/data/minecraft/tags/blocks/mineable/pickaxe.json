@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "gearworks:chocolate_block",
+    "gearworks:dark_chocolate_block",
+    "gearworks:milk_chocolate_block",
+    "gearworks:candy_cane_block",
+    "gearworks:artistic_excellence_trophy",
+    "gearworks:most_entertaining_trophy",
+    "gearworks:technical_mastery_trophy"
+  ]
+}
